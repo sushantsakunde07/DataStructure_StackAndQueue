@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 public class MyLinkedList {
+
     public INode head;
     public INode tail;
 
