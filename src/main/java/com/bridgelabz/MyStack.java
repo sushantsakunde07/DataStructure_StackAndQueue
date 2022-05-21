@@ -14,4 +14,9 @@ public class MyStack {
     public INode pop(){
         return myLinkedList.pop();
     }
+
+    public INode enqueue(MyNode<Integer> myenqueueNode) {
+        return myLinkedList.enqueue(myenqueueNode);
+    }
+
 }
