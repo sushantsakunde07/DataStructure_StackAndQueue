@@ -10,6 +10,7 @@ public class DataStructure {
         System.out.println("Press '2' to peek the element");
         System.out.println("Press '3' to pop the element");
         System.out.println("Press '4' to add element in the queue");
+        System.out.println("Press '5' to deQueue element ");
         switch (sc.nextInt()) {
             case 1:
                 createStack();
@@ -17,16 +18,33 @@ public class DataStructure {
             case 2:
                 peakTheNode();
                 break;
-
             case 3:
                 pop();
                 break;
             case 4:
                 enQueueElement();
                 break;
+            case 5:
+                deQueueElement();
+                break;
             default:
                 System.out.println("Press Valid Key");
         }
+    }
+
+    private static void deQueueElement() {
+        MyStack myStack = new MyStack();
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        myStack.enqueue(myFirstNode);
+        myStack.enqueue(mySecondNode);
+        myStack.enqueue(myThirdNode);
+        myStack.myLinkedList.printMyNode();
+
+        myStack.deQueue();
+        myStack.myLinkedList.printMyNode();
+
     }
 
     private static void enQueueElement() {

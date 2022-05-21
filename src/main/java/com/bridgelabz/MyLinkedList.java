@@ -1,4 +1,5 @@
 package com.bridgelabz;
+
 public class MyLinkedList {
     public INode head;
     public INode tail;
@@ -40,15 +41,15 @@ public class MyLinkedList {
         newNode.setNext(tempNode);
     }
 
-    public INode pop(){
+    public INode pop() {
         INode tempNode = this.head;
         this.head = head.getNext();
         return tempNode;
     }
 
-    public INode popLast(){
+    public INode popLast() {
         INode tempNode = head;
-        while(!tempNode.getNext().equals(tail)){
+        while (!tempNode.getNext().equals(tail)) {
             tempNode = tempNode.getNext();
         }
         this.tail = tempNode;
@@ -56,22 +57,28 @@ public class MyLinkedList {
         return tempNode;
     }
 
-    public INode enqueue(INode enque_node) {
+    public INode enqueue(INode top) {
         INode tempNode;
-        if (this.head == null){
-            this.head = enque_node;
+        if (this.head == null) {
+            this.head = top;
         }
-        if (this.tail==null){
-            this.tail = enque_node;
-        }else {
+        if (this.tail == null) {
+            this.tail = top;
+        } else {
             tempNode = this.tail;
-            tempNode.setNext(enque_node);
-            this.tail = enque_node;
+            tempNode.setNext(top);
+            this.tail = top;
         }
         return null;
     }
 
-    public void printMyNode(){
+    public INode dequeue() {
+        INode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
+    public void printMyNode() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
         INode tempNode = head;
         while (tempNode.getNext() != null) {
